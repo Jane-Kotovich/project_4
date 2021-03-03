@@ -33,11 +33,11 @@ app.use(express.urlencoded({ extended: true }));
 
 //Set up Routers
 
-//Login 
+//Login
 const loginRouter = require("./routes/login");
 app.use("/routes/login", loginRouter);
 
-//Home page 
+//Home page
 const indexRouter = require("./routes/index");
 app.use("/routes/index", indexRouter);
 
@@ -45,15 +45,9 @@ app.use("/routes/index", indexRouter);
 const logoutRouter = require("./routes/logout");
 app.use("/routes/logout", logoutRouter);
 
-//const schedulesRouter = require("./routes/schedules");
-//app.use("/routes/schedules", schedulesRouter);
-
 //New user sign up
 const signupRouter = require("./routes/signup");
 app.use("/routes/signup", signupRouter);
-
-//const currentUserRouter = require("./routes/currentUser");
-//app.use("/routes/currentUser", currentUserRouter);
 
 //Delete user schedule
 const deleteRouter = require("./routes/delete");
@@ -92,7 +86,5 @@ app.use("/login", loginRouter);
 app.use("/", indexRouter);
 app.use("/logout", logoutRouter);
 app.use("/signup", signupRouter);
-//app.use("/schedules", schedulesRouter);
 app.use("/users", scheduleManagerRouter);
-//app.use("/current-user", currentUserRouter);
 app.use("/delete", deleteRouter);

@@ -7,9 +7,9 @@
     "start": "if-env NODE_ENV=production ?? npm run start:prod || npm run start:dev",
     "start:dev": "nodenv -f .",
     "start:prod": "node .",
-    "create-database": "sudo -u postgres psql postgres -h localhost -f sql/create_database.sql",
-    "create-tables": "sudo -u postgres psql postgres -h localhost -d project_4 -f sql/create_users_table.sql",
-    "seed-tables": "sudo -u postgres psql postgres -h localhost -d project_4 -f sql/seed_users_table.sql",
+    "create-database": "createdb project_4",
+    "create-tables": "psql jane -h localhost -d project_4 -f sql/create_users_table.sql",
+    "seed-tables": "psql jane -h localhost -d project_4 -f sql/seed_users_table.sql",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

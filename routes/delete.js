@@ -12,7 +12,15 @@ const database = require("../database.js");
 
 //Delete specific schedule by unique_key field in database
 
-router.post("/:scheduleNum", (req, res) => {
+const redirectLogin = (req, res, next) => {
+  if (!req.session.userId) {
+    res.redirect("/login");
+  } else {
+    next();
+  }
+};
+
+router.post("/:scheduleNum", redirectLogin, (req, res) => {
   const scheduleID = req.params.scheduleNum;
   const queryDeleteSchedule = `DELETE FROM schedules WHERE unique_key = '${scheduleID}' `;
 

@@ -98,7 +98,7 @@ router.post(
       database
         .many(emailQuery)
         .then((emailResult) => {
-          res.status(422).json({ errors: errors.array() }); //Send error if so 
+          res.send("Sorry, email is taken!"); //Send error if so
         })
         //If new user has entered entered a unique email, start to store the data entered
         .catch((err) => {
